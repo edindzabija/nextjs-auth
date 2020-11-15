@@ -1,11 +1,11 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.scss'
-import React from 'react'
-import Link from 'next/link'
-import { signIn, signOut, useSession } from 'next-auth/client'
+import Head from 'next/head';
+import styles from '../styles/Home.module.scss';
+import React from 'react';
+import Link from 'next/link';
+import { signIn, signOut, useSession } from 'next-auth/client';
 
 export default function Home() {
-  const [session, loading] = useSession()
+  const [session, loading] = useSession();
 
   return (
     <div className={styles.container}>
@@ -25,10 +25,13 @@ export default function Home() {
           <>
             Signed in as {session.user.email} <br />
             <div>Much content here!</div>
+            <button>
+              <Link href='/secret'>Go to Secret</Link>
+            </button>
             <button onClick={signOut}>Sign Out</button>
           </>
         )}
       </main>
     </div>
-  )
+  );
 }
