@@ -1,4 +1,5 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+A demo app made with Next.js. 
+You can register and log in with various platforms(github, twitter...) or email.
 
 ## Getting Started
 
