@@ -3,6 +3,8 @@ You can register and log in with various platforms(github, twitter...) or email.
 
 ## Getting Started
 
+Edit env.example and fill in fields with your api keys.
+
 Run the development server:
 
 ```bash
