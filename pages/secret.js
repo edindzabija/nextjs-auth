@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useSession } from 'next-auth/client';
+import styles from '../styles/Home.module.scss';
 
 export default function Secret() {
   const [session, loading] = useSession();
@@ -21,7 +22,7 @@ export default function Secret() {
 
   if (!session) {
     return (
-      <main>
+      <main className={styles.main}>
         <div>
           <h1>You are not signed in, please sign in first</h1>
         </div>
@@ -29,7 +30,7 @@ export default function Secret() {
     );
   }
   return (
-    <main>
+    <main className={styles.main}>
       <div>
         <h1>Protected Page</h1>
         <p>{content}</p>

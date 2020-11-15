@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.scss';
-import React from 'react';
+import React, { Fragment } from 'react';
 import Link from 'next/link';
 import { signIn, signOut, useSession } from 'next-auth/client';
 
@@ -10,25 +10,30 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Create Next App</title>
+        <title>Next Auth Demo</title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
       <main className={styles.main}>
         {!session && (
           <>
-            Not Signed In <br />
-            <button onClick={signIn}>Sign In</button>
+            <h2>Not Signed In </h2>
+            <button className={styles.button} onClick={signIn}>
+              Sign In
+            </button>
           </>
         )}
         {session && (
           <>
-            Signed in as {session.user.email} <br />
+            <h2>Signed in as {session.user.email}</h2>
             <div>Much content here!</div>
-            <button>
+            <br />
+            <button className={styles.button}>
               <Link href='/secret'>Go to Secret</Link>
             </button>
-            <button onClick={signOut}>Sign Out</button>
+            <button className={styles.button} onClick={signOut}>
+              Sign Out
+            </button>
           </>
         )}
       </main>
